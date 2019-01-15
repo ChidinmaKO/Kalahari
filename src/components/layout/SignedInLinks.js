@@ -12,7 +12,7 @@ const SignedInLinks = () => {
                 <NavLink to='/'>Log Out</NavLink>
             </li>
             <li>
-                <NavLink to='/' className='btn btn-floating pink lighten-1'>CK</NavLink>
+                <NavLink to='/' className='btn btn-floating purple accent-3'>CK</NavLink>
             </li>
         </ul>
     )
