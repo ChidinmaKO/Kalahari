@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectSummary from './ProjectSummary';
+import { Link } from 'react-router-dom';
 
 const ProjectList = ({ projects }) => { 
     // receiving projects that was passed as a props to the ProjectList
@@ -7,7 +8,11 @@ const ProjectList = ({ projects }) => {
         <div className="section project-list">
             { projects && projects.map(project => {
                 return (
-                    <ProjectSummary project={ project } key={ project.id } />
+                    <div key={ project.id }>
+                        <Link to={ '/project/' + project.id }>
+                            <ProjectSummary project={ project } key={ project.id } />
+                        </Link>
+                    </div>
                 )
             })}
             {/* 'projects && projects.map()' means that if there are projects available,

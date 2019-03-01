@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 const ProjectDetail = (props) => {
-    console.log(props);
+    // console.log(props);
     const id = props.match.params.id;
     return(
         <div className="container section project-details">
@@ -23,4 +26,15 @@ const ProjectDetail = (props) => {
     )
 }
 
-export default ProjectDetail;
+const mapStateToProps = (state) => {
+    // return{
+    //     projects: state.
+    // }
+}
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'projects' }
+    ])
+)(ProjectDetail);
